@@ -28,25 +28,26 @@ userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
 |name|string|null: false, unique: true,index: :true|
 |email|string|null: false, unique: true|
 |password|string|null: false, foreign_key: true|
 
 Association
 has_many :groups,through: :group_users
-has_many :massages
-
+has_many :messages
+has_many :group_users
 
 
 groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, foreign_key: true|
 
 Association
 has_many :users,through: :group_users
+has_many :group_users
+has_many :messages
 
 
 
@@ -56,7 +57,6 @@ messageテーブル
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|user_name|string|null: false, foreign_key: true|
 |body  | text|      |
 |image|string|       |
 |time|datetime|null: false|
@@ -64,7 +64,7 @@ messageテーブル
 Association
 
 belongs_to :user
-
+has_many :groups
 
 
 
