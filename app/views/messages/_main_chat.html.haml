@@ -1,0 +1,29 @@
+.main
+  .main__header
+    .main__header__group
+      .main__header__group--name
+        group name
+      .main__header__group--member
+        Member
+        .main__header__group--member--membername
+    .main__header__edit
+      Edit
+
+  .main__contents
+    .main__contents__bar
+      .main__contents__bar--user
+        shouya
+      .main__contents__bar--time
+        2019/10/08/19:14:39
+    .main__contents__message
+      this is first message
+  .main__form
+    .main__form__text
+      %input.form__text{type:"text",placeholder:"type a message"}
+        .main__form__text--image
+          %label{class: "input-box__image"}
+            = icon("far fa-image fa-2x",'image')
+            .main__form__text--image--type
+              %input{type: "file"}
+    .main__form__send
+      send
