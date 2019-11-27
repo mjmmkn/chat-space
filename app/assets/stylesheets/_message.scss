@@ -2,6 +2,7 @@
   display:flex;
   justify-content:flex-start;
   .side-bar{
+    height:100vh;
     .header{
       padding-left:20px;
       background-color:#253141;
@@ -22,7 +23,6 @@
         padding-right:20px;
         color:#FFFFFF;
         .list{
-
         }
       }
     }
@@ -54,6 +54,7 @@
 
   .main{
     width:calc(100vw - 300px);
+    height:100vh;
     &__header{
       padding-left:40px;
       display:flex;
@@ -85,6 +86,7 @@
       }
     }
     .messages {
+      overflow: scroll;
       background-color: #FAFAFA;
       box-sizing: border-box;
       padding: 46px 40px 0;
