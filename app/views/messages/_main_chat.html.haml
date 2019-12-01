@@ -29,43 +29,16 @@
         %ul.left-header__members
           - @group.users.each do |user|
             = user.name
-          %li.member
-        
-          %li.member
-    
-          %li.member
-            
       .right-header
         .right-header__button
           = link_to "Edit", edit_group_path(@group)
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-          
-          .upper-message__date
-            
-        .lower-meesage
-          .lower-message__content
-          
-      .message
-        .upper-message
-          .upper-message__user-name
-          .upper-message__date
-        .lower-meesage
-          .lower-message__content
-      .message
-        .upper-message
-          .upper-message__user-name
-          .upper-message__date
-        .lower-meesage
-          .lower-message__content
-        
+      = render @messages
     .form
-      %form
-        %input.form__message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
-            = icon('fa','image',class: 'icon')
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'Send'}
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
