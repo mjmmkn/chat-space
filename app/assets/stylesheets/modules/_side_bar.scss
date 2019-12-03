@@ -26,11 +26,12 @@
     background-color:#2f3e51;
     height: calc(100vh - 100px);
     padding: 0 20px;
+    
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
       .grouplink{
-        text-decoration:none;
+        text-decoration: none;
         &__name {
           color: white;
           font-size:11px;
@@ -39,7 +40,7 @@
           color: white;
           font-size:11px;
           margin-top: 5px;
-      }
+           }
      }
     }
   }
